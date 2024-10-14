@@ -83,7 +83,6 @@ header {
   display: flex;
   position: relative;
   cursor: pointer;
-  transition: opacity 0.3s;
   text-transform: uppercase;
   overflow: hidden;
   padding-top: 1px;
@@ -196,32 +195,36 @@ main {
   object-position: center;
 }
 
+.car {
+  filter: hue-rotate(40deg) brightness(113%);
+}
+
 .cat {
-  filter: grayscale(80%);
+  filter: grayscale(80%) brightness(113%);
 }
 
 .glasses {
-  filter: invert(80%);
+  filter: invert(80%) brightness(113%);
 }
 
 .meeting {
-  filter: sepia(180%);
+  filter: sepia(180%) brightness(113%);
 }
 
 .rider {
-  filter: brightness(50%);
+  filter: brightness(50%) invert(20%);
 }
 
 .suit {
-  filter: saturate(30%);
+  filter: saturate(30%) brightness(113%);
 }
 
 .think {
-  filter: grayscale(95%);
+  filter: grayscale(95%) brightness(113%);
 }
 
 .rizz {
-  filter: blur(4px);
+  filter: blur(4px) brightness(113%);
 }
 
 .card-article {
@@ -290,7 +293,6 @@ main {
   margin: 0;
   padding: 0;
   outline: none;
-  border: none;
   background-color: transparent;
   align-self: end;
   border: 2px solid transparent;
@@ -470,14 +472,6 @@ main {
   .save-button:hover .button__text {
     mix-blend-mode: difference;
   }
-}
-
-.save-button:focus {
-  outline: none;
-}
-
-.save-button:focus-visible {
-  box-shadow: 2px 2px var(--accent-color);
 }
 
 .dialog-disk-settings[open] {
