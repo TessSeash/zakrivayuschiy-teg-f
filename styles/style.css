@@ -22,52 +22,60 @@
   background-image: var(--bg-grad-image);
   background-attachment: fixed;
   background-size: cover;
+  font-family: var(--font-main), sans-serif;
+  font-variation-settings: var(--font-variant-regular);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr min-content 1fr;
-  height: 100vh;
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+  justify-content: center;
+  align-items: center;
   font-family: var(--font-accent);
+  min-width: 214px;
 }
 
 .theme-menu {
-  grid-area: 2 / 2 / 3 / 3;
+  margin: 102px 0;
   background-color: var(--bg-color);
-  display: grid;
-  grid-template-columns: min-content;
-  grid-template-rows: min-content min-content;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 2px solid var(--accent-color);
 }
 
 .logo-group {
-  margin: 136px 120px 25px 120px;
+  margin-top: 136px;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .slogan {
-  font-size: 65px;
+  font-size: clamp(3.0625rem, 1.8943rem + 4.9844vw, 4.0625rem);
 }
 
 .sub-slogan {
-  font-size: 23px;
+  font-size: clamp(0.875rem, 0.2179rem + 2.8037vw, 1.4375rem);
   margin-top: 20px;
 }
 
 .theme-menu__list {
-  align-self: center;
-  justify-self: center;
+  margin: 24px 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-bottom: 25px;
+  gap: 10px;
   position: relative;
 }
 
 .theme-menu__button {
+  margin-left: calc(50% - 70px / 2 + 2px);
   border: none;
   width: min-content;
   background-color: transparent;
@@ -75,74 +83,87 @@ header {
   display: flex;
   position: relative;
   cursor: pointer;
+  transition: opacity 0.3s;
+  text-transform: uppercase;
+  overflow: hidden;
+  padding-top: 1px;
+  padding-bottom: 3px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .theme-menu__button:focus {
   outline: none;
   opacity: 60%;
-  transition: all 0.3s;
+  transition: opacity 0.3s;
 }
 
-.theme-menu__button:focus-visible::before {
+.theme-menu__button::before {
+  transform: translatex(-100%);
+  transition: transform 0.3s ease-in-out;
   content: "";
   position: absolute;
   border-bottom: 2px solid var(--accent-color);
-  bottom: -2px;
-  left: 5px;
+  bottom: 0;
+  left: 0;
   transform-origin: left;
-  inline-size: 88%;
-  animation-name: button-focus;
-  animation-duration: 1s;
-  animation-timing-function: ease;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+  inline-size: 100%;
+}
+
+.theme-menu__button:focus-visible::before {
+  transform: translatex(0);
+  /*animation: 0.5s button-focus 1 ease forwards;*/
 }
 
 .theme-menu__button:disabled {
   pointer-events: none;
   opacity: 60%;
+  overflow: visible;
 }
 
 .theme-menu__button:enabled:hover {
   opacity: 60%;
-  transition: all 0.3s;
 }
 
 .theme-menu__button:disabled::before {
   content: "▶";
+  border: none;
   position: relative;
   inline-size: 0;
-  animation-name: button-arrow;
-  animation-duration: 0.5s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  animation: 0.5s button-arrow infinite alternate ease-in-out;
 }
 
 main {
-  font-family: var(--font-main);
+  max-width: 700px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 52px;
+  gap: 51px;
   margin-bottom: 105px;
 }
 
 .card {
+  width: 100%;
   display: flex;
   flex-direction: column;
   border: 2px solid var(--accent-color);
-  width: min-content;
   background-color: var(--bg-color);
 }
 
 .card-title {
-  margin: 3px 10px 3px 10px;
+  font-variation-settings: var(--font-variant-bold);
+  font-size: 18px;
+  line-height: 22px;
+  margin: 4px 10px 4px 10px;
 }
 
-.card-container-image {
- position: relative;
+.card-image-container {
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .card-label {
@@ -150,11 +171,14 @@ main {
   top: 25px;
   right: 25px;
   z-index: 2;
+  font-family: var(--font-accent), sans-serif;
+  font-size: 14px;
   text-transform: uppercase;
-  text-shadow: -1px 0 var(--bg-color), 0 1px var(--bg-color), 1px 0 var(--bg-color), 0 -1px var(--bg-color);
+  text-shadow: 0 0 1px var(--bg-color);
 }
 
-@supports (-webkit-text-stroke: 1px var(--bg-color)) or (mix-blend-mode: hard-light) {
+@supports (-webkit-text-stroke: 1px var(--bg-color)) or
+  (mix-blend-mode: hard-light) {
   .card-label {
     text-shadow: none;
     mix-blend-mode: hard-light;
@@ -162,23 +186,51 @@ main {
   }
 }
 
-
 .card-image {
   position: relative;
-  margin: 0;
-  padding: 0;
-  width: 696px;
-  height: 696px;
-  background-size: cover ;
+  width: 100%;
+  height: 100%;
   vertical-align: top;
   z-index: 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cat {
+  filter: grayscale(80%);
+}
+
+.glasses {
+  filter: invert(80%);
+}
+
+.meeting {
+  filter: sepia(180%);
+}
+
+.rider {
+  filter: brightness(50%);
+}
+
+.suit {
+  filter: saturate(30%);
+}
+
+.think {
+  filter: grayscale(95%);
+}
+
+.rizz {
+  filter: blur(4px);
 }
 
 .card-article {
   display: flex;
   flex-direction: column;
+  line-height: 21px;
   gap: 27px;
   margin: 25px;
+  font-size: 18px;
 }
 
 .button-like-settings {
@@ -193,11 +245,11 @@ main {
   background-color: transparent;
   cursor: pointer;
   z-index: 1;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
 }
 
 .button-like-settings:hover .button__text {
-  transition: all 0.5s ease-in-out;
-  z-index: 2;
   color: var(--bg-color);
 }
 
@@ -208,23 +260,26 @@ main {
   }
 }
 
-.button-like-settings:hover::before {
+.button-like-settings::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
   width: 100%;
   height: 100%;
   background-color: var(--accent-color);
   transform-origin: left;
-  animation-name: like-button-hover;
-  animation-duration: 0.5s;
-  animation-timing-function: ease-in-out;
+  z-index: -1;
+}
+
+.button-like-settings:hover::before {
+  /*animation: 0.5s like-button-hover ease-in-out;*/
+  transform: translateX(0%);
 }
 
 .button-like-settings:focus {
   outline: none;
-  transition: all 0.3s;
 }
 
 .button-like-settings:focus-visible {
@@ -234,16 +289,17 @@ main {
 .card__icon-button {
   margin: 0;
   padding: 0;
-  outline: none;  
+  outline: none;
   border: none;
   background-color: transparent;
   align-self: end;
   border: 2px solid transparent;
+  z-index: 2;
 }
 
 .card__icon-button:focus {
   outline: none;
-  transition: all 0.3s ease;
+  transition: border 0.3s ease;
 }
 
 .card__icon-button:focus-visible {
@@ -283,7 +339,7 @@ main {
 }
 
 .like-icon:active .main-body {
-  fill: var(--heart-color);  
+  fill: var(--heart-color);
   transition: fill 0.3s;
   transition-delay: 0.05s;
 }
@@ -294,17 +350,17 @@ main {
 }
 
 .like-icon.is-liked .main-body {
-  fill: var(--heart-color);  
+  fill: var(--heart-color);
   transition: fill 0.3s;
   transition-delay: 0.05s;
 }
 
 .contour {
- transition: fill 0.1s;
+  transition: fill 0.1s;
 }
 
 .like-icon.is-liked .contour {
-  fill: var(--heart-color);  
+  fill: var(--heart-color);
   transition: fill 0.3s;
   transition-delay: 0.06s;
 }
@@ -329,18 +385,23 @@ main {
 }
 
 .card-container-button {
-  margin: 0  25px 25px 0;
+  margin: 0 25px 25px 0;
   align-self: end;
   display: flex;
-  gap: 12px;
+  gap: 5px;
 }
 
 .save-button {
+  position: relative;
   flex-direction: row;
-  width: 335px;
+  width: 339px;
   height: 51px;
   align-items: center;
   justify-content: center;
+  font-family: var(--font-accent);
+  font-size: 14px;
+  gap: 8px;
+  overflow: hidden;
 }
 
 .save-button:hover {
@@ -356,7 +417,140 @@ main {
 }
 
 .disk-icon {
+  position: relative;
   width: 21px;
   height: 21px;
+  z-index: 3;
+}
+
+.disk-settings {
   fill: var(--accent-color);
+}
+
+.save-button:hover .disk-settings {
+  transition: fill 0.5s ease-in-out;
+}
+
+@supports (mix-blend-mode: difference) {
+  .save-button:hover .disk-settings {
+    fill: var(--bg-color);
+    mix-blend-mode: difference;
+  }
+}
+
+.save-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  transform-origin: left;
+  z-index: 1;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.save-button:hover::before {
+  transform: translate(0%);
+}
+
+.button__text {
+  transition: color 0.5s ease-in-out;
+  font-size: 14px;
+  z-index: 2;
+}
+
+.save-button:hover .button__text {
+  transition: color 0.5s ease-in-out;
+  color: var(--like-button);
+}
+
+@supports (mix-blend-mode: difference) {
+  .save-button:hover .button__text {
+    mix-blend-mode: difference;
+  }
+}
+
+.save-button:focus {
+  outline: none;
+}
+
+.save-button:focus-visible {
+  box-shadow: 2px 2px var(--accent-color);
+}
+
+.dialog-disk-settings[open] {
+  display: grid;
+  padding: 30px;
+  background-color: var(--bg-color);
+  border: 2px solid var(--accent-color);
+  grid-template-columns: min-content;
+  grid-template-rows: min-content;
+  gap: 30px;
+}
+
+.dialog-ok-button {
+  margin: 0;
+  padding: 0;
+  width: 293px;
+  height: 38px;
+  color: var(--accent-color);
+  font-family: var(--font-accent);
+  background-color: transparent;
+  transition: box-shadow 0.3s;
+  border: 2px solid var(--accent-color);
+  cursor: pointer;
+}
+
+.dialog-ok-button:focus {
+  outline: none;
+}
+
+.dialog-ok-button:focus-visible {
+  box-shadow: 2px 2px var(--accent-color);
+}
+
+.dialog-disk-title-group {
+  display: grid;
+  color: var(--accent-color);
+  font-family: var(--font-accent);
+  font-size: 14px;
+  font-weight: 400;
+  grid-template-columns: min-content 1fr;
+  gap: 20px;
+}
+
+.dialog-disk-icon {
+  width: 40px;
+  height: 40px;
+  align-self: center;
+}
+
+.dialog-disk-text {
+  font-size: 14px;
+  line-height: 150%;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.3);
+  backdrop-filter: blur(7px);
+}
+
+@media (width < 376px) {
+  .header {
+    max-width: none;
+  }
+
+  main {
+    max-width: none;
+  }
+
+  .dialog-ok-button {
+    width: 257px;
+  }
+
+  .dialog-disk-settings[open] {
+    padding: 28px 37px;
+  }
 }
