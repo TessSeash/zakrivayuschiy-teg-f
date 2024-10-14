@@ -87,7 +87,6 @@ header {
   overflow: hidden;
   padding-top: 1px;
   padding-bottom: 3px;
-  transition: transform 0.3s ease-in-out;
   transition: opacity 0.3s;
 }
 
