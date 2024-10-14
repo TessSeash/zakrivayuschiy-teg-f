@@ -45,16 +45,6 @@
   }
 }
 
-@keyframes button-focus {
-  from {
-    inline-size: 0%;
-  }
-
-  to {
-    inline-size: 100%;
-  }
-}
-
 @keyframes like-button-hover {
   from {
     transform: scaleX(0);

@@ -8,6 +8,7 @@
   --accent-color: #000000;
   --like-button: white;
   --heart-color: #ff0000;
+  --blend-mode-color: white;
   --bg-grad-image: repeating-linear-gradient(
       to right,
       #d3d3d3,
