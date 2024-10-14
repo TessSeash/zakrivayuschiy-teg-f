@@ -2,8 +2,8 @@
 :root {
   --font-main: "Inter";
   --font-accent: "PressStart2P";
-  --font-variant-bold: "wght" 700;
-  --font-variant-regular: "wght" 400;
+  --font-variant-bold: 700;
+  --font-variant-regular: 400;
   --bg-color: white;
   --accent-color: #000000;
   --like-button: white;

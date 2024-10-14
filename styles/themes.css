@@ -10,8 +10,8 @@
   --accent-color: #00cc14;
   --like-button: #00cc14;
   --like-button: #00cc14;
-  --font-variant-bold: "wght" 785;
-  --font-variant-regular: "wght" 465;
+  --font-variant-bold: 785;
+  --font-variant-regular: 465;
   --bg-grad-image: repeating-linear-gradient(
       to right,
       #000,
@@ -35,8 +35,8 @@
     --accent-color: #00cc14;
     --like-button: #00cc14;
     --like-button: #00cc14;
-    --font-variant-bold: "wght" 785;
-    --font-variant-regular: "wght" 465;
+    --font-variant-bold: 785;
+    --font-variant-regular: 465;
     --bg-grad-image: repeating-linear-gradient(
         to right,
         #000,
