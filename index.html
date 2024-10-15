@@ -20,35 +20,45 @@
   </head>
   <body class="page">
     <header class="header">
-      <nav class="theme-menu header__theme-menu">
-        <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
+      <div class="header-menu">
         <div class="logo-group">
           <h1 class="slogan">&lt;/html&gt;</h1>
           <h2 class="sub-slogan">Закрывающий тег</h2>
         </div>
-        <ul class="theme-menu__list">
-          <li class="theme-menu__item">
-            <button type="button" data-theme="dark" class="theme-menu__button">
-              Темно
-            </button>
-          </li>
-          <li class="theme-menu__item">
-            <button
-              type="button"
-              data-theme="auto"
-              disabled
-              class="theme-menu__button"
-            >
-              Авто
-            </button>
-          </li>
-          <li class="theme-menu__item">
-            <button type="button" data-theme="light" class="theme-menu__button">
-              Светло
-            </button>
-          </li>
-        </ul>
-      </nav>
+        <nav class="header__theme-menu">
+          <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
+          <ul class="theme-menu__list">
+            <li class="theme-menu__item">
+              <button
+                type="button"
+                data-theme="dark"
+                class="theme-menu__button"
+              >
+                Темно
+              </button>
+            </li>
+            <li class="theme-menu__item">
+              <button
+                type="button"
+                data-theme="auto"
+                disabled
+                class="theme-menu__button"
+              >
+                Авто
+              </button>
+            </li>
+            <li class="theme-menu__item">
+              <button
+                type="button"
+                data-theme="light"
+                class="theme-menu__button"
+              >
+                Светло
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
       <section class="card">
@@ -63,16 +73,16 @@
             alt="Фургон в 2D стиле"
           />
         </div>
-        <article class="card-article">
+        <div class="card-article">
           <p>
             Это было самое начало пути. На этом этапе важно было проникнуться
             основами и настроиться на учёбу. И, возможно, подумать, как новые
             знания могут повлиять на ваше будущее.
           </p>
           <p>Волнение и ожидание: первые шаги в мир веб-разработки.</p>
-        </article>
+        </div>
         <div class="card-container-button">
-          <button class="card__icon-button" type="submit">
+          <button class="card__icon-button" type="button">
             <svg
               class="like-icon"
               width="39"
@@ -107,7 +117,7 @@
           </button>
           <button
             class="card__like-button button-default-settings button-default-animation button-like-settings"
-            type="submit"
+            type="button"
           >
             <span class="button__text">Like</span>
           </button>
@@ -123,7 +133,7 @@
             alt="Фургон в 2D стиле"
           />
         </div>
-        <article class="card-article">
+        <div class="card-article">
           <p>
             На первых этапах мы работали со страхами и сомнениями, которые часто
             испытывают новички. Один из них — страх перед чистым листом. Это,
@@ -132,9 +142,9 @@
             будет слишком сложно? что, если я не справлюсь?
           </p>
           <p>Эмоции после первого спринта: от радости до сомнений.</p>
-        </article>
+        </div>
         <div class="card-container-button">
-          <button class="card__icon-button" type="submit">
+          <button class="card__icon-button" type="button">
             <svg
               class="like-icon"
               width="39"
@@ -169,7 +179,7 @@
           </button>
           <button
             class="card__like-button button-default-settings button-default-animation button-like-settings"
-            type="submit"
+            type="button"
           >
             <span class="button__text">Like</span>
           </button>
@@ -185,16 +195,16 @@
             alt="Фургон в 2D стиле"
           />
         </div>
-        <article class="card-article">
+        <div class="card-article">
           <p>
             Первый проект — позади! Но это всё ещё самое начало пути. Радость
             могла быстро померкнуть и смениться ожиданием провала. Или вы,
             наоборот, могли вдохновиться успехами и поверить в себя.
           </p>
           <p>Завершён первый спринт: радость успеха и новые ожидания.</p>
-        </article>
+        </div>
         <div class="card-container-button">
-          <button class="card__icon-button" type="submit">
+          <button class="card__icon-button" type="button">
             <svg
               class="like-icon"
               width="39"
@@ -229,7 +239,7 @@
           </button>
           <button
             class="card__like-button button-default-settings button-default-animation button-like-settings"
-            type="submit"
+            type="button"
           >
             <span class="button__text">Like</span>
           </button>
@@ -245,7 +255,7 @@
             alt="Фургон в 2D стиле"
           />
         </div>
-        <article class="card-article">
+        <div class="card-article">
           <p>
             На этом этапе вы уже достаточно разбирались в основах вёрстки, чтобы
             понять, как много ещё впереди. Вы могли попытаться погнаться за
@@ -254,9 +264,9 @@
             старались просто сделать.
           </p>
           <p>Уверенность и желание учиться дальше.</p>
-        </article>
+        </div>
         <div class="card-container-button">
-          <button class="card__icon-button" type="submit">
+          <button class="card__icon-button" type="button">
             <svg
               class="like-icon"
               width="39"
@@ -291,7 +301,7 @@
           </button>
           <button
             class="card__like-button button-default-settings button-default-animation button-like-settings"
-            type="submit"
+            type="button"
           >
             <span class="button__text">Like</span>
           </button>
@@ -307,7 +317,7 @@
             alt="Фургон в 2D стиле"
           />
         </div>
-        <article class="card-article">
+        <div class="card-article">
           <p>
             Всё это время вы были не одиноки (хотя, возможно, иногда и
             чувствовали, что одни против целого мира). Вас окружали
@@ -317,9 +327,9 @@
             правда ли?
           </p>
           <p>Дух соревнования и стремление не отставать от команды.</p>
-        </article>
+        </div>
         <div class="card-container-button">
-          <button class="card__icon-button" type="submit">
+          <button class="card__icon-button" type="button">
             <svg
               class="like-icon"
               width="39"
@@ -354,7 +364,7 @@
           </button>
           <button
             class="card__like-button button-default-settings button-default-animation button-like-settings"
-            type="submit"
+            type="button"
           >
             <span class="button__text">Like</span>
           </button>
@@ -370,16 +380,16 @@
             alt="Фургон в 2D стиле"
           />
         </div>
-        <article class="card-article">
+        <div class="card-article">
           <p>
             На этом курсе вы постоянно решали разные задачи. В какой-то момент
             вам могло показаться, что решения просто иссякли. Значит, пришло
             время посмотреть на задачу под другим углом.
           </p>
           <p>Сложные задачи и свежие решения, новые подходы.</p>
-        </article>
+        </div>
         <div class="card-container-button">
-          <button class="card__icon-button" type="submit">
+          <button class="card__icon-button" type="button">
             <svg
               class="like-icon"
               width="39"
@@ -414,7 +424,7 @@
           </button>
           <button
             class="card__like-button button-default-settings button-default-animation button-like-settings"
-            type="submit"
+            type="button"
           >
             <span class="button__text">Like</span>
           </button>
@@ -430,7 +440,7 @@
             alt="Фургон в 2D стиле"
           />
         </div>
-        <article class="card-article">
+        <div class="card-article">
           <p>
             Во время учёбы часто возникает чувство, когда не знаешь, за что
             хвататься. Вроде и проектную пора сдавать, и задачи хочется
@@ -439,9 +449,9 @@
             черпали.
           </p>
           <p>Источники концентрации в хаосе: как я справлялся с задачами.</p>
-        </article>
+        </div>
         <div class="card-container-button">
-          <button class="card__icon-button" type="submit">
+          <button class="card__icon-button" type="button">
             <svg
               class="like-icon"
               width="39"
@@ -476,7 +486,7 @@
           </button>
           <button
             class="card__like-button button-default-settings button-default-animation button-like-settings"
-            type="submit"
+            type="button"
           >
             <span class="button__text">Like</span>
           </button>
@@ -492,7 +502,7 @@
             alt="Фургон в 2D стиле"
           />
         </div>
-        <article class="card-article">
+        <div class="card-article">
           <p>
             Сейчас вы уже очень много знаете о вёрстке. Но это только начало.
             Во-первых, впереди ещё много материала про «красотищу». Во-вторых, с
@@ -505,9 +515,9 @@
             Размышления о будущем и нескончаемом процессе познания. Новые
             испытания ждут меня!
           </p>
-        </article>
+        </div>
         <div class="card-container-button">
-          <button class="card__icon-button" type="submit">
+          <button class="card__icon-button" type="button">
             <svg
               class="like-icon"
               width="39"
@@ -542,18 +552,17 @@
           </button>
           <button
             class="card__like-button button-default-settings button-default-animation button-like-settings"
-            type="submit"
+            type="button"
           >
             <span class="button__text">Like</span>
           </button>
         </div>
       </section>
-
       <button
         class="button-default-settings button-default-animation save-button"
         onclick="window['dialog-disk'].showModal()"
         aria-controls="dialog-disk"
-        type="submit"
+        type="button"
       >
         <svg class="disk-icon">
           <use
@@ -580,6 +589,7 @@
         <button
           class="button-default-settings button-default-animation dialog-ok-button"
           onclick="window['dialog-disk'].close()"
+          type="button"
         >
           <span class="button__text">ОК</span>
         </button>

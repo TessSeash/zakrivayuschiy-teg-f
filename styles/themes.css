@@ -31,8 +31,6 @@
 }
 
 :root.theme-light {
-    --font-main: "Inter";
-    --font-accent: "PressStart2P";
     --font-variant-bold: 700;
     --font-variant-regular: 400;
     --bg-color: white;
